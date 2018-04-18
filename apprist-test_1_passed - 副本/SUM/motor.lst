@@ -1,0 +1,161 @@
+C51 COMPILER V9.01   MOTOR                                                                 04/17/2018 22:07:28 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MOTOR
+OBJECT MODULE PLACED IN motor.obj
+COMPILER INVOKED BY: E:\keil4\C51\BIN\C51.EXE source_file\c_file\motor.c BROWSE INCDIR(.\source_file\head_file) DEBUG OB
+                    -JECTEXTEND PRINT(.\motor.lst) OBJECT(motor.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          #include "motor.h"
+   3          
+   4          
+   5          // 链传动 motor driver
+   6          
+   7          
+   8          void motor_1_run(char pwm_control)
+   9          {
+  10   1      //      if(pwm_control > 100)
+  11   1      //      {
+  12   1      //              pwm_control = 20;
+  13   1      //      }
+  14   1      //      else
+  15   1      //      {
+  16   1                      pwm_1 = pwm_control;
+  17   1      //      }
+  18   1      }
+  19          void motor_1_stop()
+  20          {
+  21   1              pwm_1 = 0;
+  22   1      }
+  23          
+  24          
+  25          //上侧夹子 driver
+  26          void motor_2_init()
+  27          {
+  28   1              //motor_2_detecter = 1;
+  29   1              while(motor_2_detecter)
+  30   1              {
+  31   2                      delay(2);
+  32   2                      while(motor_2_detecter)
+  33   2                      {
+  34   3                              motor_2_backward();
+  35   3                              
+  36   3                      }
+  37   2              }
+  38   1              motor_2_stop();
+  39   1              motor_2_forward_time(65000);
+  40   1                      
+  41   1      }
+  42          
+  43          
+  44          void motor_2_forward()
+  45          {
+  46   1              pwm_2_1 = 80;
+  47   1              pwm_2_2 = 0;    
+  48   1      }
+  49          void motor_2_backward()
+  50          {
+  51   1              pwm_2_1 = 0;
+  52   1              pwm_2_2 = 80;   
+  53   1      }
+  54          void motor_2_stop()
+C51 COMPILER V9.01   MOTOR                                                                 04/17/2018 22:07:28 PAGE 2   
+
+  55          {
+  56   1              pwm_2_1 = 0;
+  57   1              pwm_2_2 = 0;
+  58   1      }
+  59          void motor_2_forward_time(long int time)
+  60          {
+  61   1              
+  62   1              motor_2_forward();
+  63   1              delay(time);
+  64   1              motor_2_stop();
+  65   1              
+  66   1      
+  67   1      }
+  68          void motor_2_backward_time(long int time)
+  69          {
+  70   1              motor_2_backward();
+  71   1              delay(time);
+  72   1              motor_2_stop();
+  73   1      }
+  74          
+  75          
+  76          // motor 3
+  77          void motor_3_init()
+  78          {
+  79   1              //motor_3_detecter = 1;
+  80   1              while(motor_3_detecter)
+  81   1              {
+  82   2                      delay(2);
+  83   2                      while(motor_3_detecter)
+  84   2                      {
+  85   3                              motor_3_backward();
+  86   3                      
+  87   3                      }
+  88   2              }
+  89   1              motor_3_stop();
+  90   1              motor_3_forward_time(20625);
+  91   1                      
+  92   1      }
+  93          
+  94          void motor_3_forward()
+  95          {
+  96   1              pwm_3_1 = 80;
+  97   1              pwm_3_2 = 0;    
+  98   1      }
+  99          void motor_3_backward()
+ 100          {
+ 101   1              pwm_3_1 = 0;
+ 102   1              pwm_3_2 = 80;   
+ 103   1      }
+ 104          void motor_3_stop()
+ 105          {
+ 106   1              pwm_3_1 = 0;
+ 107   1              pwm_3_2 = 0;
+ 108   1      }
+ 109          void motor_3_forward_time(long int time)
+ 110          {
+ 111   1              
+ 112   1              motor_3_forward();
+ 113   1              delay(time);
+ 114   1              motor_3_stop();
+ 115   1      
+ 116   1      }
+C51 COMPILER V9.01   MOTOR                                                                 04/17/2018 22:07:28 PAGE 3   
+
+ 117          void motor_3_backward_time(long int time)
+ 118          {
+ 119   1              motor_3_backward();
+ 120   1              delay(time);
+ 121   1              motor_3_stop();
+ 122   1      }
+ 123          
+ 124          
+ 125          void motor_4_run_time()
+ 126          {
+ 127   1              pwm_4 = 80;
+ 128   1              delay(motor_4_time);
+ 129   1              pwm_4 = 0;
+ 130   1      }
+ 131          
+ 132          
+ 133          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    212    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

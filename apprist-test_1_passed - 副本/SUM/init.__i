@@ -1,0 +1,1 @@
+"source_file\c_file\init.c" BROWSE INCDIR(.\source_file\head_file) DEBUG OBJECTEXTEND PRINT(.\init.lst) OBJECT(init.obj)

@@ -1,0 +1,7 @@
+"counter.obj",
+"LCD1602.obj",
+"main.obj",
+"misc.obj",
+"motor.obj" 
+TO "test2" 
+RAMSIZE(256) 
